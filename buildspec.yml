@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+
+  pre_build:
+    commands:
+      - chmod +x build-image.sh push-image.sh # make files executable
+      - docker --version
+      - ./build-image.sh # build the docker image
+
+  build:
+    commands:
+      - ./push-image.sh # login and push the image to your docker hub repository
