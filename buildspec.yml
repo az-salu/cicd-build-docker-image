@@ -13,4 +13,5 @@ phases:
 
   build:
     commands:
+      - docker images
       - ./push-image.sh # login and push the image to your docker hub repository
