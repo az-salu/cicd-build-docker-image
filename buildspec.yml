@@ -8,10 +8,10 @@ phases:
   pre_build:
     commands:
       - chmod +x build-image.sh push-image.sh # make files executable
-      - docker --version
+      - docker --version # check if docker is installed 
       - ./build-image.sh # build the docker image
 
   build:
     commands:
-      - docker images
+      - docker images # list images
       - ./push-image.sh # login and push the image to your docker hub repository
